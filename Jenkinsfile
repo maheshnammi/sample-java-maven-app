@@ -28,11 +28,11 @@ pipeline {
       }
     }
     
-    stage('Deploy to tomcat') {
-      steps {
-        sh 'sudo scp -i $tomcat_pem -o "StrictHostKeyChecking=no" webapp/target/webapp.war ubuntu@3.110.102.219:/opt/tomcat/webapps'
-      }
-    }
+//   stage('Deploy to tomcat') {
+//     steps {
+//       sh 'sudo scp -i $tomcat_pem -o "StrictHostKeyChecking=no" webapp/target/webapp.war ubuntu@3.110.102.219:/opt/tomcat/webapps'
+//     }
+//    }
 //     stage('building docker image from docker file by tagging') {
 //       steps {
 //         sh 'docker build -t phanirudra9/phani9-devops:$BUILD_NUMBER .'
@@ -53,12 +53,12 @@ pipeline {
 //         sh 'ansible-playbook deploy.yml --extra-vars="buildNumber=$BUILD_NUMBER"'
 //       }   
 //     }  
-}
-post {
-     always {
-       emailext to: 'nammimahesh01@gmail.com',
-       attachLog: true, body: "Dear team pipeline is ${currentBuild.result} please check ${BUILD_URL} or PFA build log", compressLog: false,
-       subject: "Jenkins Build Notification: ${JOB_NAME}-Build# ${BUILD_NUMBER} ${currentBuild.result}"
-    }
-}
-}
+//}
+//post {
+//     always {
+//       emailext to: 'nammimahesh01@gmail.com',
+//       attachLog: true, body: "Dear team pipeline is ${currentBuild.result} please check ${BUILD_URL} or PFA build log", compressLog: false,
+//       subject: "Jenkins Build Notification: ${JOB_NAME}-Build# ${BUILD_NUMBER} ${currentBuild.result}"
+//    }
+//}
+//}
