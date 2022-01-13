@@ -28,11 +28,11 @@ pipeline {
       }
     }
     
-//   stage('Deploy to tomcat') {
-//     steps {
-//       sh 'sudo scp -i $tomcat_pem -o "StrictHostKeyChecking=no" webapp/target/webapp.war ubuntu@3.110.102.219:/opt/tomcat/webapps'
-//     }
-//    }
+   stage('Deploy to tomcat') {
+     steps {
+       sh 'sudo scp -i $tomcat_pem -o "StrictHostKeyChecking=no" webapp/target/webapp.war ubuntu@13.234.116.13:/opt/tomcat/webapps'
+     }
+    }
 //     stage('building docker image from docker file by tagging') {
 //       steps {
 //         sh 'docker build -t phanirudra9/phani9-devops:$BUILD_NUMBER .'
