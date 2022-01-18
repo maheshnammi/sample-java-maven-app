@@ -1,4 +1,4 @@
-- hosts: 3.110.220.195
+- hosts: all
   become: true
   tasks:
     - name: copy war file from jenkins to tomcat
