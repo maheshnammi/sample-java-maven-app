@@ -30,7 +30,7 @@ pipeline {
     
    stage('Deploy to tomcat') {
     steps {
-      sh 'scp -i $tomcat_pem -o "StrictHostKeyChecking=no" webapp/target/webapp.war ubuntu@3.110.220.195:/home/ubuntu/'
+      sh 'ansible-playbook deploy-new.yml'
      }
     }
 //     stage('building docker image from docker file by tagging') {
